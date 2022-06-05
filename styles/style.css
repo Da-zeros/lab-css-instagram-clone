@@ -7,4 +7,151 @@ light blue: #1c5380
 body {
   font: 200 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
+  background-image: url("../images/fondoInsta.png");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
+.gridCont{
+  display: grid;
+  grid-template-columns: 0.5fr 1fr;
+  grid-template-areas:  
+      "photoArea cardArea"
+      "footerArea footerArea";
+}
+
+#photoColumn{
+  grid-area:photoArea;
+  padding: 120px 150px;
+}
+
+#photoColumn img{
+  width: 500px;
+}
+
+#cardColumn{
+  grid-area:cardArea;
+  padding: 120px 0px;
+}
+
+#cardColumn article{
+  display: flex;
+  align-items: center;
+}
+
+#cardColumn article:nth-child(2n){
+  padding-top: 50px;
+}
+
+#cardColumn .loginCont{
+  margin-left: 6em;
+  width: 190px;
+  display: flex;
+  justify-content: space-around;
+  align-items:center;
+  border:0.2em solid #50789A;
+  border-style: outset;
+  border-radius: 4px;
+}
+
+#cardColumn .loginCont:hover{
+  cursor: pointer;
+  border:0.25em solid #5f819f;
+}
+
+#cardColumn .loginLogo img{
+  width: 500px;
+}
+
+#cardColumn .loginCont img{
+  width: 50px;
+  height: 35px;
+}
+
+#cardColumn .loginCont p{
+  font-weight: bold;
+  font-size: 1.5em;
+  display: inline-block;
+  color:#fff;
+}
+
+#cardColumn article .cardCont{
+  border-radius: 4px;
+  padding: 10px 40px;
+  background-color:#fff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 4px 2px 2px rgba(0,0,0,0.1);
+  
+}
+
+#cardColumn .cardCont h4{
+  color:#365876;
+  font-size: 3em;
+  font-weight: bold;
+  max-width: 500px;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+#cardColumn .cardCont p{
+  color:#5e5e5e;
+  font-size: 2em;
+  max-width: 900px;
+  margin: 15px 0;
+  
+}
+
+#cardColumn .cardCont span{
+  color:#000000;
+  font-weight: bold;
+}
+
+#cardColumn .cardCont .appCont{
+  padding: 20px 0;
+  display: flex;
+}
+
+#cardColumn .cardCont .appCont img{
+  width: 250px;
+  margin: 0 20px;
+}
+#footerRow{
+  grid-area:footerArea;
+  display: flex;
+  justify-content: center;
+}
+
+#footerRow ul{
+  display: flex;
+  list-style:none;
+}
+
+#footerRow ul li{
+  color: #4a7aa4;
+  font-weight: bold;
+  padding: 15px;
+  font-size: 1.3em;
+  text-transform: uppercase;
+}
+
+#footerRow ul li span{
+  color: #989898;
+}
+
+@media screen and ( max-width: 768px){
+  .gridCont{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas:  
+        "cardArea"
+        "photoArea"
+        "footerArea";
+  }
+
+  #footerRow ul{
+    display: flex;
+    list-style:none;
+    flex-direction: column;
+  }
+}
+  
